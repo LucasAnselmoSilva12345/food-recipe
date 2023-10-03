@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FoodRandomProps } from '../types/FoodRandomProps';
-import axios from 'axios';
+import { api } from '../api/meal-db-api';
 
 export function FoodDetails() {
   const { id } = useParams();
@@ -10,9 +10,7 @@ export function FoodDetails() {
   useEffect(() => {
     const fetchFoodDetails = async () => {
       try {
-        const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-        );
+        const response = await api.get(`/lookup.php?i=${id}`);
         setFoodProps(response.data.meals[0]);
       } catch (error) {
         console.error('Erro ao buscar detalhes do prato:', error);
