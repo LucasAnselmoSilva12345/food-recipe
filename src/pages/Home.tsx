@@ -1,3 +1,5 @@
+import { FoodRandomizer } from '../components/FoodRandomizer';
+
 export function Home() {
-  return <h1 className="text-2xl">Home</h1>;
+  return <FoodRandomizer />;
 }
