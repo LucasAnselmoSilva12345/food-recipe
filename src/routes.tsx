@@ -4,6 +4,7 @@ import { Home } from './pages/Home';
 import { ByName } from './pages/ByName';
 import { ByCategories } from './pages/ByCategories';
 import { ByLetter } from './pages/ByLetter';
+import { FoodDetails } from './components/FoodDetails';
 
 export function RoutesApp() {
   return (
@@ -14,6 +15,7 @@ export function RoutesApp() {
         <Route path="/by-name/" element={<ByName />} />
         <Route path="/by-letter/" element={<ByLetter />} />
         <Route path="/by-categories/" element={<ByCategories />} />
+        <Route path="/food/:id" element={<FoodDetails />} />
       </Routes>
     </BrowserRouter>
   );

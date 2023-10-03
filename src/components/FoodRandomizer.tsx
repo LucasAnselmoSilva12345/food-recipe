@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-interface FoodRandomizerProps {
+interface FoodRandom {
   idMeal: string;
   strMeal: string;
   strInstructions: string;
@@ -9,9 +9,8 @@ interface FoodRandomizerProps {
   strYoutube: string;
 }
 
-export function FoodRandomizer() {
-  const [foodRandomized, setFoodRandomized] =
-    useState<FoodRandomizerProps | null>(null);
+export function FoodRandom() {
+  const [foodRandomized, setFoodRandomized] = useState<FoodRandom | null>(null);
 
   useEffect(() => {
     const fetchFoodRandom = async () => {

@@ -1,5 +1,5 @@
-import { FoodRandomizer } from '../components/FoodRandomizer';
+import { FoodRandom } from '../components/FoodRandomizer';
 
 export function Home() {
-  return <FoodRandomizer />;
+  return <FoodRandom />;
 }
