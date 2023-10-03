@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
-
 import { FoodRandomProps } from '../types/FoodRandomProps';
 import { api } from '../api/meal-db-api';
-import { useNavigate } from 'react-router-dom';
+import { FoodCard } from './FoodCard';
 
 export function FoodRandom() {
   const [foodRandom, setFoodRandom] = useState<FoodRandomProps | null>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFoodRandom = async () => {
@@ -21,24 +19,22 @@ export function FoodRandom() {
     fetchFoodRandom();
   }, []);
 
-  const handleClick = (id: string) => {
-    navigate(`/food/${id}`);
-  };
-
   return (
-    <div className="container cursor-pointer">
+    <section className="w-full md:max-w-[1200px] md:mx-auto md:my-0 p-8 text-orange-500">
+      <h1 className="text-4xl text-center md:text-left font-bold mb-4">
+        Uma receita de boas vindas
+      </h1>
       {foodRandom ? (
-        <div onClick={() => handleClick(`${foodRandom.idMeal}`)}>
-          <div className="w-9/12 mx-auto my-0 pt-4">
-            <img src={foodRandom.strMealThumb} alt={foodRandom.strMeal} />
-            <h2>{foodRandom.strMeal}</h2>
-            <p>{foodRandom.strInstructions}</p>
-            <a href={foodRandom.strYoutube}>Youtube</a>
-          </div>
-        </div>
+        <FoodCard
+          idMeal={`${foodRandom.idMeal}`}
+          strMeal={`${foodRandom.strMeal}`}
+          strInstructions={`${foodRandom.strInstructions}`}
+          strMealThumb={`${foodRandom.strMealThumb}`}
+          strYoutube={`${foodRandom.strYoutube}`}
+        />
       ) : (
         <p>Carregando</p>
       )}
-    </div>
+    </section>
   );
 }

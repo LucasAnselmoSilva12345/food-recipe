@@ -10,13 +10,15 @@ export function RoutesApp() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/by-name/" element={<ByName />} />
-        <Route path="/by-letter/" element={<ByLetter />} />
-        <Route path="/by-categories/" element={<ByCategories />} />
-        <Route path="/food/:id" element={<FoodDetails />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/by-name/" element={<ByName />} />
+          <Route path="/by-letter/" element={<ByLetter />} />
+          <Route path="/by-categories/" element={<ByCategories />} />
+          <Route path="/food/:id" element={<FoodDetails />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }
