@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { FoodRandomProps } from '../types/FoodRandomProps';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from '../components/FoodCard';
+import { Title } from '../components/Title';
 
 export function ByLetter() {
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
@@ -32,7 +33,7 @@ export function ByLetter() {
 
   return (
     <section>
-      <h1>Pesquise por letra</h1>
+      <Title title="pesquise a receita por letra" />
 
       <div className="space-x-2">
         {alphabet.map((letter) => (

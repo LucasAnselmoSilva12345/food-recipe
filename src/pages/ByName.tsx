@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FoodRandomProps } from '../types/FoodRandomProps';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from '../components/FoodCard';
+import { Title } from '../components/Title';
 
 export function ByName() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -18,6 +19,7 @@ export function ByName() {
 
   return (
     <section>
+      <Title title="Pesquise a receita pelo nome" />
       <h1>Pesquise sua comida pelo nome</h1>
       <div>
         <input
