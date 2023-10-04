@@ -31,7 +31,7 @@ export function ByName() {
         </label>
         <input
           type="text"
-          name="searchMeal"
+          id="searchMeal"
           className="py-4 text-sm text-neutral-800 border-none rounded focus:outline focus:outline-2 focus:outline-orange-400"
           placeholder="e.g. sushi"
           value={searchTerm}
