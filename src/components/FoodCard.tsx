@@ -11,7 +11,7 @@ export function FoodCard(props: FoodRandomProps) {
 
   return (
     <div
-      className="w-full bg-white rounded"
+      className="w-full bg-white rounded cursor-pointer transition-all hover:scale-105"
       onClick={() => handleClick(`${props.idMeal}`)}
     >
       <img
