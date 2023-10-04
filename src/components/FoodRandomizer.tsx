@@ -21,8 +21,8 @@ export function FoodRandom() {
   }, []);
 
   return (
-    <section className="w-full md:max-w-[1200px] md:mx-auto md:my-0 p-8 text-orange-500">
-      <Title title=" Uma receita de boas vindas" />
+    <section className="w-full md:w-4/5 lg:w-1/2 px-6 py-4">
+      <Title title="Uma receita de boas vindas" />
       {foodRandom ? (
         <FoodCard
           idMeal={`${foodRandom.idMeal}`}
