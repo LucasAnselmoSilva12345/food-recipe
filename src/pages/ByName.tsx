@@ -4,6 +4,7 @@ import { api } from '../api/meal-db-api';
 import { FoodCard } from '../components/FoodCard';
 import { Title } from '../components/Title';
 import { MagnifyingGlass } from '@phosphor-icons/react';
+import { Warning } from '../components/Warning';
 
 export function ByName() {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -55,7 +56,7 @@ export function ByName() {
           strYoutube={foodData.strYoutube}
         />
       ) : (
-        <p>Não foi possivel encontrar a receita</p>
+        <Warning message="Nenhum resultado encontrado..." />
       )}
     </section>
   );

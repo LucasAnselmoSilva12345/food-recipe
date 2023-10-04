@@ -3,6 +3,7 @@ import { FoodRandomProps } from '../types/FoodRandomProps';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from '../components/FoodCard';
 import { Title } from '../components/Title';
+import { Warning } from '../components/Warning';
 
 export function ByLetter() {
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
@@ -32,12 +33,16 @@ export function ByLetter() {
   };
 
   return (
-    <section>
-      <Title title="pesquise a receita por letra" />
+    <section className="w-full md:w-4/5 lg:w-1/2 px-6 py-4">
+      <Title title="Pesquise a receita por letra" />
 
-      <div className="space-x-2">
+      <div className="mt-3">
         {alphabet.map((letter) => (
-          <button key={letter} onClick={() => handleLetterClick(letter)}>
+          <button
+            key={letter}
+            className="mx-1 px-6 md:px-4 font-inter font-medium text-orange-950 transition-all duration-150 focus:outline-2 focus:outline-orange-700 hover:text-orange-700"
+            onClick={() => handleLetterClick(letter)}
+          >
             {letter}
           </button>
         ))}
@@ -45,10 +50,10 @@ export function ByLetter() {
 
       {loading && <p>Carregando</p>}
       {!loading && foodResults.length === 0 && (
-        <p>Nenhum resultado encontrado ao pesquisar por esse letra</p>
+        <Warning message="Nenhum resultado encontrado..." />
       )}
       {!loading && foodResults.length > 0 && (
-        <div>
+        <div className="grid grid-cols-1">
           {foodResults.map((result) => (
             <FoodCard
               key={result.idMeal}
@@ -61,16 +66,6 @@ export function ByLetter() {
           ))}
         </div>
       )}
-      {foodResults.map((result) => (
-        <FoodCard
-          key={result.idMeal}
-          idMeal={result.idMeal}
-          strMealThumb={result.strMealThumb}
-          strMeal={result.strMeal}
-          strInstructions={result.strInstructions}
-          strYoutube={result.strYoutube}
-        />
-      ))}
     </section>
   );
 }

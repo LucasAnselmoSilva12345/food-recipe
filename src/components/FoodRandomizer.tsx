@@ -3,6 +3,7 @@ import { FoodRandomProps } from '../types/FoodRandomProps';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from './FoodCard';
 import { Title } from './Title';
+import { Warning } from './Warning';
 
 export function FoodRandom() {
   const [foodRandom, setFoodRandom] = useState<FoodRandomProps | null>(null);
@@ -32,7 +33,7 @@ export function FoodRandom() {
           strYoutube={`${foodRandom.strYoutube}`}
         />
       ) : (
-        <p>Carregando</p>
+        <Warning message="Não temos receitas para ser exibidas..." />
       )}
     </section>
   );
