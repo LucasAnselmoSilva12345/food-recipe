@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { FoodRandomProps } from '../types/FoodRandomProps';
 import { api } from '../api/meal-db-api';
+import { Title } from './Title';
+import { Warning } from './Warning';
 
 export function FoodDetails() {
   const { id } = useParams();
@@ -21,38 +23,39 @@ export function FoodDetails() {
   }, [id]);
 
   return (
-    <div>
+    <section className="w-full md:w-4/5 lg:w-1/2 px-6 py-4">
       {foodProps ? (
-        <div>
-          <h2>{foodProps.strMeal}</h2>
-          <img src={foodProps.strMealThumb} alt={foodProps.strMeal} />
-          <p>{foodProps.strInstructions}</p>
+        <div className="">
+          <Title title={foodProps.strMeal} className="mb-3" />
+          <img
+            src={foodProps.strMealThumb}
+            alt={foodProps.strMeal}
+            className="w-full md:h-[48rem] object-cover"
+          />
+          <div className="my-2 flex flex-col md:items-center md:justify-between md:flex-row space-y-2 md:space-y-0">
+            <p className="text-lg font-inter font-bold">
+              Categoria:{' '}
+              <span className=" font-normal">{foodProps.strCategory}</span>{' '}
+            </p>
 
-          <h3>Ingredientes</h3>
-          <ul>
-            {Array.from({ length: 20 }, (_, i) => i + 1).map((index) => {
-              const foodIngredient = foodProps[`strIngredient${index}`];
-              const foodMeasure = foodProps[`strMeasure${index}`];
+            <p className="text-lg font-inter font-bold">
+              Area: <span className=" font-normal">{foodProps.strArea}</span>{' '}
+            </p>
 
-              if (
-                foodIngredient &&
-                foodIngredient.trim() !== '' &&
-                foodMeasure
-              ) {
-                return (
-                  <li key={index}>
-                    {foodIngredient} - {foodMeasure}
-                  </li>
-                );
-              }
+            <p className="text-lg font-inter font-bold">
+              Tags: <span className=" font-normal">{foodProps.strTags}</span>{' '}
+            </p>
+          </div>
+          <p className="text-neutral-900">{foodProps.strInstructions}</p>
 
-              return null;
-            })}
-          </ul>
+          <div>
+            <a href={foodProps.strYoutube}>YouTube</a>
+            <a href={foodProps.strSource}>Fonte original</a>
+          </div>
         </div>
       ) : (
-        <p>Carregando</p>
+        <Warning message="Carregando..." />
       )}
-    </div>
+    </section>
   );
 }
