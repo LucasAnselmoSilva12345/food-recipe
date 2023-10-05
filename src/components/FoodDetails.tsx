@@ -23,7 +23,7 @@ export function FoodDetails() {
   }, [id]);
 
   return (
-    <section className="w-full md:w-4/5 lg:w-1/2 px-6 py-4">
+    <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
       {foodProps ? (
         <div className="">
           <Title title={foodProps.strMeal} className="mb-3" />

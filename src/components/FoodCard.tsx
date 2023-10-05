@@ -10,7 +10,7 @@ export function FoodCard(props: PartialMealsAPIProps) {
 
   return (
     <div
-      className=" bg-white mt-5 rounded-xl cursor-pointer transition-all duration-200 hover:scale-105"
+      className=" bg-white mt-8 md:mt-5 rounded-xl cursor-pointer transition-all duration-200 hover:scale-105"
       onClick={() => handleClick(`${props.idMeal}`)}
     >
       <img

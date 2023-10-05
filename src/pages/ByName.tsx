@@ -20,7 +20,7 @@ export function ByName() {
   };
 
   return (
-    <section className="w-full md:w-4/5 lg:w-1/2 px-6 py-4">
+    <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
       <Title title="Pesquise a receita pelo nome" />
       <div className="w-full flex flex-col mt-4 space-y-2">
         <label

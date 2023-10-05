@@ -5,7 +5,7 @@ export function Title({ title, className }: ComponentPropsWithRef<'h1'>) {
   return (
     <h1
       className={twMerge(
-        'text-4xl font-bold font-inter text-orange-600',
+        'text-4xl pt-4 font-bold font-inter text-orange-600',
         className
       )}
     >
