@@ -1,5 +1,6 @@
 import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { useNavigate } from 'react-router-dom';
+import { ClickableButton } from './ClickableButton';
 
 export function FoodCard(props: PartialMealsAPIProps) {
   const navigate = useNavigate();
@@ -24,12 +25,12 @@ export function FoodCard(props: PartialMealsAPIProps) {
         </h2>
         <p className="text-neutral-900">{props.strInstructions}</p>
         {props.strYoutube ? (
-          <a
-            className="bg-orange-500 text-orange-50 w-full p-2 rounded text-lg font-bold flex items-center justify-center gap-1 hover:opacity-80"
-            href={props.strYoutube}
-          >
-            Youtube
-          </a>
+          <ClickableButton
+            key={props.idMeal}
+            src={props.strYoutube}
+            title="Youtube"
+            className="bg-orange-500"
+          />
         ) : (
           <></>
         )}

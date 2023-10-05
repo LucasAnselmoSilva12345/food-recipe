@@ -4,6 +4,8 @@ import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { Title } from './Title';
 import { Warning } from './Warning';
+import { FoodInfo } from './FoodInfo';
+import { ClickableButton } from './ClickableButton';
 
 export function FoodDetails() {
   const { id } = useParams();
@@ -30,27 +32,27 @@ export function FoodDetails() {
           <img
             src={foodProps.strMealThumb}
             alt={foodProps.strMeal}
-            className="w-full md:h-[48rem] object-cover"
+            className="w-full md:h-[24rem] object-cover"
           />
-          <div className="my-2 flex flex-col md:items-center md:justify-between md:flex-row space-y-2 md:space-y-0">
-            <p className="text-lg font-inter font-bold">
-              Categoria:{' '}
-              <span className=" font-normal">{foodProps.strCategory}</span>{' '}
-            </p>
+          <FoodInfo
+            strCategory={foodProps.strCategory!}
+            strArea={foodProps.strArea!}
+            strTags={foodProps.strTags!}
+          />
 
-            <p className="text-lg font-inter font-bold">
-              Area: <span className=" font-normal">{foodProps.strArea}</span>{' '}
-            </p>
-
-            <p className="text-lg font-inter font-bold">
-              Tags: <span className=" font-normal">{foodProps.strTags}</span>{' '}
-            </p>
-          </div>
           <p className="text-neutral-900">{foodProps.strInstructions}</p>
 
-          <div>
-            <a href={foodProps.strYoutube}>YouTube</a>
-            <a href={foodProps.strSource}>Fonte original</a>
+          <div className="mt-4 flex flex-col md:flex-row items-center justify-center gap-4">
+            <ClickableButton
+              src={foodProps.strYoutube!}
+              title="YouTube"
+              className="bg-orange-500"
+            />
+            <ClickableButton
+              src={foodProps.strSource!}
+              title="Fonte original"
+              className="bg-cyan-950"
+            />
           </div>
         </div>
       ) : (
