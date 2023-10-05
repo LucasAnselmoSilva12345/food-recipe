@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from '../components/FoodCard';
+import { Title } from '../components/Title';
 
 interface IngredientProps {
   idMeal: string;
@@ -29,7 +30,9 @@ export function Ingredient() {
   }, [id]);
 
   return (
-    <div>
+    <section className="w-full md:w-4/5 lg:w-1/2 px-6 py-4">
+      <Title title={`Receitas com ${id}`} />
+
       {propsIngredient?.map((ingredient, index) => (
         <FoodCard
           key={index}
@@ -38,6 +41,6 @@ export function Ingredient() {
           strMealThumb={ingredient.strMealThumb}
         />
       ))}
-    </div>
+    </section>
   );
 }
