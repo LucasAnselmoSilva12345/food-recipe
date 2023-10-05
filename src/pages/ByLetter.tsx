@@ -36,11 +36,11 @@ export function ByLetter() {
     <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
       <Title title="Pesquise a receita por letra" />
 
-      <div className="mt-3">
+      <div className="mt-3 py-3 md:text-center">
         {alphabet.map((letter) => (
           <button
             key={letter}
-            className="mx-1 px-6 md:px-4 font-inter font-medium text-orange-950 transition-all duration-150 focus:outline-2 focus:outline-orange-700 hover:text-orange-700"
+            className="mx-1 px-6 md:px-1 font-inter font-medium text-orange-950 transition-all duration-150 focus:outline-2 focus:outline-orange-700 hover:text-orange-700"
             onClick={() => handleLetterClick(letter)}
           >
             {letter}
@@ -53,7 +53,7 @@ export function ByLetter() {
         <Warning message="Nenhum resultado encontrado..." />
       )}
       {!loading && foodResults.length > 0 && (
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {foodResults.map((result) => (
             <FoodCard
               key={result.idMeal}
