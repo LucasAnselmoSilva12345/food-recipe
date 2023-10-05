@@ -33,14 +33,16 @@ export function Ingredient() {
     <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
       <Title title={`Receitas com ${id}`} />
 
-      {propsIngredient?.map((ingredient, index) => (
-        <FoodCard
-          key={index}
-          idMeal={ingredient.idMeal}
-          strMeal={ingredient.strMeal}
-          strMealThumb={ingredient.strMealThumb}
-        />
-      ))}
+      <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {propsIngredient?.map((ingredient, index) => (
+          <FoodCard
+            key={index}
+            idMeal={ingredient.idMeal}
+            strMeal={ingredient.strMeal}
+            strMealThumb={ingredient.strMealThumb}
+          />
+        ))}
+      </div>
     </section>
   );
 }
