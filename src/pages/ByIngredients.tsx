@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api/meal-db-api';
+import { Link } from 'react-router-dom';
 
 interface IngredientsProps {
   idIngredient: string;
@@ -12,7 +13,6 @@ export function ByIngredients() {
   );
   const [searchIngredientTerm, setSearchIngredientTerm] = useState<string>('');
   const [searchResults, setSearchResults] = useState<IngredientsProps[]>([]);
-
   useEffect(() => {
     const fetchFoodByIngredient = async () => {
       try {
@@ -47,7 +47,9 @@ export function ByIngredients() {
         onChange={(e) => setSearchIngredientTerm(e.target.value)}
       />
       {searchResults?.map((ingredient, index) => (
-        <h1 key={index}>{ingredient.strIngredient}</h1>
+        <Link to={`/by-ingredient/${ingredient.strIngredient}`} key={index}>
+          <h3>{ingredient.strIngredient}</h3>
+        </Link>
       ))}
     </div>
   );

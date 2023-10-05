@@ -19,10 +19,7 @@ export function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              className="h-full px-3 transition-colors"
-              to="/by-categories/"
-            >
+            <Link className="h-full px-3 transition-colors" to="/ingredient/">
               Recitas por ingredientes
             </Link>
           </li>
