@@ -22,7 +22,7 @@ export function ByName() {
   return (
     <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
       <Title title="Pesquise a receita pelo nome" />
-      <div className="w-full flex flex-col mt-4 space-y-2">
+      <div className="w-full flex flex-col mt-4 mb-8 space-y-2">
         <label
           htmlFor="searchMeal"
           className="text-neutral-800 font-inter font-medium"
@@ -39,7 +39,7 @@ export function ByName() {
         />
 
         <button
-          className="flex items-center justify-center gap-1 py-3 text-base border-none bg-orange-500 text-orange-50 font-semibold"
+          className="py-3 flex items-center justify-center gap-1 text-base font-inter font-semibold border-none bg-orange-500 text-orange-50 transition-all hover:opacity-80 hover:duration-150"
           onClick={handleSearch}
         >
           Pesquisar
@@ -48,13 +48,15 @@ export function ByName() {
       </div>
 
       {foodData ? (
-        <FoodCard
-          idMeal={foodData.idMeal}
-          strMealThumb={foodData.strMealThumb}
-          strMeal={foodData.strMeal}
-          strInstructions={foodData.strInstructions}
-          strYoutube={foodData.strYoutube}
-        />
+        <div className="w-full lg:w-1/2 lg:my-0 lg:mx-auto">
+          <FoodCard
+            idMeal={foodData.idMeal}
+            strMealThumb={foodData.strMealThumb}
+            strMeal={foodData.strMeal}
+            strInstructions={foodData.strInstructions}
+            strYoutube={foodData.strYoutube}
+          />
+        </div>
       ) : (
         <Warning message="Nenhum resultado encontrado..." />
       )}
