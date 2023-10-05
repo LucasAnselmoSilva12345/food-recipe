@@ -61,10 +61,14 @@ export function ByIngredients() {
         />
       </div>
 
-      <div className="w-full py-2">
+      <div className="w-full py-2 grid grid-cols-1 md:grid-cols-2 gap-4">
         {searchResults?.map((ingredient, index) => (
-          <Link to={`/by-ingredient/${ingredient.strIngredient}`} key={index}>
-            <h3 className="bg-white py-4 px-1 my-2 font-inter text-lg font-bold text-neutral-800">
+          <Link
+            to={`/by-ingredient/${ingredient.strIngredient}`}
+            key={index}
+            className="focus:outline-2 focus:outline-orange-500"
+          >
+            <h3 className="bg-white py-4 px-1 my-2 font-inter text-lg font-bold text-neutral-800 hover:bg-orange-500 hover:text-orange-50 transition-all hover:duration-500">
               {ingredient.strIngredient}
             </h3>
           </Link>
