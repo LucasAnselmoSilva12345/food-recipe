@@ -20,7 +20,7 @@ export function ByName() {
   };
 
   return (
-    <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
+    <section className="w-full px-6 py-4 md:w-3/5 md:my-0 md:mx-auto">
       <Title title="Pesquise a receita pelo nome" />
       <div className="w-full flex flex-col mt-4 mb-8 space-y-2">
         <label
@@ -48,7 +48,7 @@ export function ByName() {
       </div>
 
       {foodData ? (
-        <div className="w-full lg:w-1/2 lg:my-0 lg:mx-auto">
+        <div className="w-full lg:w-3/5 lg:my-0 lg:mx-auto">
           <FoodCard
             idMeal={foodData.idMeal}
             strMealThumb={foodData.strMealThumb}

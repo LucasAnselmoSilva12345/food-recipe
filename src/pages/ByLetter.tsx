@@ -33,7 +33,7 @@ export function ByLetter() {
   };
 
   return (
-    <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
+    <section className="w-full px-6 py-4 md:w-3/5 md:my-0 md:mx-auto">
       <Title title="Pesquise a receita por letra" />
 
       <div className="mt-3 py-3 md:text-center">

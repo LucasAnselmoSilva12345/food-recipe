@@ -24,15 +24,15 @@ export function Home() {
   }, []);
 
   return (
-    <section className="w-full px-6 py-4 md:w-4/5 md:my-0 md:mx-auto">
+    <section className="w-full px-6 py-4 md:w-3/5 md:my-0 md:mx-auto">
       <Title title="Uma receita de boas vindas" />
       {randomMeal ? (
         <FoodCard
-          idMeal={`${randomMeal.idMeal}`}
-          strMeal={`${randomMeal.strMeal}`}
-          strInstructions={`${randomMeal.strInstructions}`}
-          strMealThumb={`${randomMeal.strMealThumb}`}
-          strYoutube={`${randomMeal.strYoutube}`}
+          idMeal={randomMeal.idMeal}
+          strMeal={randomMeal.strMeal}
+          strInstructions={randomMeal.strInstructions}
+          strMealThumb={randomMeal.strMealThumb}
+          strYoutube={randomMeal.strYoutube}
         />
       ) : (
         <Warning message="Não temos receitas para ser exibidas..." />
