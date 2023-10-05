@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Home } from './pages/Home';
 import { ByName } from './pages/ByName';
-import { ByCategories } from './pages/ByCategories';
+import { ByIngredients } from './pages/ByIngredients';
 import { ByLetter } from './pages/ByLetter';
 import { FoodDetails } from './components/FoodDetails';
 
@@ -15,7 +15,7 @@ export function RoutesApp() {
           <Route path="/" element={<Home />} />
           <Route path="/by-name/" element={<ByName />} />
           <Route path="/by-letter/" element={<ByLetter />} />
-          <Route path="/by-categories/" element={<ByCategories />} />
+          <Route path="/by-categories/" element={<ByIngredients />} />
           <Route path="/food/:id" element={<FoodDetails />} />
         </Routes>
       </main>
