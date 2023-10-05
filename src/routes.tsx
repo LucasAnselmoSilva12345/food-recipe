@@ -4,8 +4,8 @@ import { Home } from './pages/Home';
 import { ByName } from './pages/ByName';
 import { ByIngredients } from './pages/ByIngredients';
 import { ByLetter } from './pages/ByLetter';
-import { FoodDetails } from './components/FoodDetails';
 import { Ingredient } from './pages/Ingredient';
+import { MealDetail } from './pages/MealDetail';
 
 export function RoutesApp() {
   return (
@@ -18,7 +18,7 @@ export function RoutesApp() {
           <Route path="/by-letter/" element={<ByLetter />} />
           <Route path="/ingredient/" element={<ByIngredients />} />
           <Route path="/by-ingredient/:id" element={<Ingredient />} />
-          <Route path="/food/:id" element={<FoodDetails />} />
+          <Route path="/meal/:id" element={<MealDetail />} />
         </Routes>
       </main>
     </BrowserRouter>

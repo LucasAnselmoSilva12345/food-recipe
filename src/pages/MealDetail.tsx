@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
-import { Title } from './Title';
-import { Warning } from './Warning';
-import { FoodInfo } from './FoodInfo';
-import { ClickableButton } from './ClickableButton';
+import { Title } from '../components/Title';
+import { FoodInfo } from '../components/FoodInfo';
+import { ClickableButton } from '../components/ClickableButton';
+import { Warning } from '../components/Warning';
 
-export function FoodDetails() {
+export function MealDetail() {
   const { id } = useParams();
   const [foodProps, setFoodProps] = useState<PartialMealsAPIProps | null>(null);
 

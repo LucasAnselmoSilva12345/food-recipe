@@ -6,7 +6,7 @@ export function FoodCard(props: PartialMealsAPIProps) {
   const navigate = useNavigate();
 
   const handleClick = (id: string) => {
-    navigate(`/food/${id}`);
+    navigate(`/meal/${id}`);
   };
 
   return (
