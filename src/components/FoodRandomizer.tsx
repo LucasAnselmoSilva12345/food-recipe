@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { FoodRandomProps } from '../types/FoodRandomProps';
+import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from './FoodCard';
 import { Title } from './Title';
 import { Warning } from './Warning';
 
 export function FoodRandom() {
-  const [foodRandom, setFoodRandom] = useState<FoodRandomProps | null>(null);
+  const [foodRandom, setFoodRandom] = useState<PartialMealsAPIProps | null>(
+    null
+  );
 
   useEffect(() => {
     const fetchFoodRandom = async () => {

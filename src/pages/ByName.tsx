@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FoodRandomProps } from '../types/FoodRandomProps';
+import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from '../components/FoodCard';
 import { Title } from '../components/Title';
@@ -8,7 +8,7 @@ import { Warning } from '../components/Warning';
 
 export function ByName() {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [foodData, setFoodData] = useState<FoodRandomProps | null>(null);
+  const [foodData, setFoodData] = useState<PartialMealsAPIProps | null>(null);
 
   const handleSearch = async () => {
     try {

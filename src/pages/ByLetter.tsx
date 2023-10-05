@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FoodRandomProps } from '../types/FoodRandomProps';
+import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { FoodCard } from '../components/FoodCard';
 import { Title } from '../components/Title';
@@ -7,7 +7,7 @@ import { Warning } from '../components/Warning';
 
 export function ByLetter() {
   const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
-  const [foodResults, setFoodResults] = useState<FoodRandomProps[]>([]);
+  const [foodResults, setFoodResults] = useState<PartialMealsAPIProps[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {

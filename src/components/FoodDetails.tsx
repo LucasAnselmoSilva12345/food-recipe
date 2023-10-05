@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { FoodRandomProps } from '../types/FoodRandomProps';
+import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { Title } from './Title';
 import { Warning } from './Warning';
 
 export function FoodDetails() {
   const { id } = useParams();
-  const [foodProps, setFoodProps] = useState<FoodRandomProps | null>(null);
+  const [foodProps, setFoodProps] = useState<PartialMealsAPIProps | null>(null);
 
   useEffect(() => {
     const fetchFoodDetails = async () => {

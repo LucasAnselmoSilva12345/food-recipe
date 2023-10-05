@@ -1,7 +1,7 @@
-import { FoodRandomProps } from '../types/FoodRandomProps';
+import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { useNavigate } from 'react-router-dom';
 
-export function FoodCard(props: FoodRandomProps) {
+export function FoodCard(props: PartialMealsAPIProps) {
   const navigate = useNavigate();
 
   const handleClick = (id: string) => {
