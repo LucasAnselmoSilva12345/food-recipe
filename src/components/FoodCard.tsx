@@ -23,12 +23,16 @@ export function FoodCard(props: PartialMealsAPIProps) {
           {props.strMeal}
         </h2>
         <p className="text-neutral-900">{props.strInstructions}</p>
-        <a
-          className="bg-orange-500 text-orange-50 w-full p-2 rounded text-lg font-bold flex items-center justify-center gap-1 hover:opacity-80"
-          href={props.strYoutube}
-        >
-          Youtube
-        </a>
+        {props.strYoutube ? (
+          <a
+            className="bg-orange-500 text-orange-50 w-full p-2 rounded text-lg font-bold flex items-center justify-center gap-1 hover:opacity-80"
+            href={props.strYoutube}
+          >
+            Youtube
+          </a>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

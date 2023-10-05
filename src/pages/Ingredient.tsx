@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../api/meal-db-api';
+import { FoodCard } from '../components/FoodCard';
 
 interface IngredientProps {
   idMeal: string;
@@ -30,7 +31,12 @@ export function Ingredient() {
   return (
     <div>
       {propsIngredient?.map((ingredient, index) => (
-        <h1 key={index}>{ingredient.strMeal}</h1>
+        <FoodCard
+          key={index}
+          idMeal={ingredient.idMeal}
+          strMeal={ingredient.strMeal}
+          strMealThumb={ingredient.strMealThumb}
+        />
       ))}
     </div>
   );
