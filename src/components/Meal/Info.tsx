@@ -1,10 +1,10 @@
-interface FoodInfoProps {
+interface InfoProps {
   strCategory: string;
   strArea: string;
   strTags: string;
 }
 
-export function FoodInfo({ strCategory, strArea, strTags }: FoodInfoProps) {
+export function Info({ strCategory, strArea, strTags }: InfoProps) {
   return (
     <div className="my-2 flex flex-col md:items-center md:justify-between md:flex-row space-y-2 md:space-y-0">
       <p className="text-neutral-900 text-lg font-inter font-bold">

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { Title } from '../components/Title';
-import { FoodInfo } from '../components/Meal/FoodInfo';
+import { Info } from '../components/Meal/Info';
 import { ClickableButton } from '../components/ClickableButton';
 import { Warning } from '../components/Warning';
 
@@ -34,7 +34,7 @@ export function MealDetail() {
             alt={foodProps.strMeal}
             className="w-full md:h-[24rem] object-cover"
           />
-          <FoodInfo
+          <Info
             strCategory={foodProps.strCategory!}
             strArea={foodProps.strArea!}
             strTags={foodProps.strTags!}
