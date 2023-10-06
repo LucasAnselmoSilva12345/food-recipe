@@ -1,8 +1,8 @@
-import { PartialMealsAPIProps } from '../types/MealsAPIProps';
+import { PartialMealsAPIProps } from '../../types/MealsAPIProps';
 import { useNavigate } from 'react-router-dom';
-import { ClickableButton } from './ClickableButton';
+import { ClickableButton } from '../ClickableButton';
 
-export function FoodCard(props: PartialMealsAPIProps) {
+export function Card(props: PartialMealsAPIProps) {
   const navigate = useNavigate();
 
   const handleClick = (id: string) => {

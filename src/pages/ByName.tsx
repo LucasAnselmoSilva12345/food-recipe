@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
-import { FoodCard } from '../components/FoodCard';
+import { Card } from '../components/Meal/Card';
 import { Title } from '../components/Title';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { Warning } from '../components/Warning';
@@ -49,7 +49,7 @@ export function ByName() {
 
       {foodData ? (
         <div className="w-full lg:w-3/5 lg:my-0 lg:mx-auto">
-          <FoodCard
+          <Card
             idMeal={foodData.idMeal}
             strMealThumb={foodData.strMealThumb}
             strMeal={foodData.strMeal}

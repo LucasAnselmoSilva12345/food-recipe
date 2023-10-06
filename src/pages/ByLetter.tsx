@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
-import { FoodCard } from '../components/FoodCard';
+import { Card } from '../components/Meal/Card';
 import { Title } from '../components/Title';
 import { Warning } from '../components/Warning';
 
@@ -55,7 +55,7 @@ export function ByLetter() {
       {!loading && foodResults.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {foodResults.map((result) => (
-            <FoodCard
+            <Card
               key={result.idMeal}
               idMeal={result.idMeal}
               strMealThumb={result.strMealThumb}

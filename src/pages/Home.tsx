@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { Title } from '../components/Title';
-import { FoodCard } from '../components/FoodCard';
+import { Card } from '../components/Meal/Card';
 import { Warning } from '../components/Warning';
 
 export function Home() {
@@ -27,7 +27,7 @@ export function Home() {
     <section className="w-full px-6 py-4 md:w-3/5 md:my-0 md:mx-auto">
       <Title title="Uma receita de boas vindas" />
       {randomMeal ? (
-        <FoodCard
+        <Card
           idMeal={randomMeal.idMeal}
           strMeal={randomMeal.strMeal}
           strInstructions={randomMeal.strInstructions}

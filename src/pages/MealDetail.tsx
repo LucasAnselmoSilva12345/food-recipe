@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { PartialMealsAPIProps } from '../types/MealsAPIProps';
 import { api } from '../api/meal-db-api';
 import { Title } from '../components/Title';
-import { FoodInfo } from '../components/FoodInfo';
+import { FoodInfo } from '../components/Meal/FoodInfo';
 import { ClickableButton } from '../components/ClickableButton';
 import { Warning } from '../components/Warning';
 

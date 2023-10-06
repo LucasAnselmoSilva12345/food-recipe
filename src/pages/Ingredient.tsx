@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../api/meal-db-api';
-import { FoodCard } from '../components/FoodCard';
+import { Card } from '../components/Meal/Card';
 import { Title } from '../components/Title';
 
 interface IngredientProps {
@@ -35,7 +35,7 @@ export function Ingredient() {
 
       <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {propsIngredient?.map((ingredient, index) => (
-          <FoodCard
+          <Card
             key={index}
             idMeal={ingredient.idMeal}
             strMeal={ingredient.strMeal}
