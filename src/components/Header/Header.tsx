@@ -19,7 +19,7 @@ export function Header() {
               className="text-orange-500 font-inter font-bold text-lg"
               to="/"
             >
-              Início
+              Food-Recipe
             </Link>
           </div>
 
