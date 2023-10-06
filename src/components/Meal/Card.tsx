@@ -18,6 +18,7 @@ export function Card(props: PartialMealsAPIProps) {
         className="rounded-t-xl w-full h-48 object-cover"
         src={props.strMealThumb}
         alt={props.strMeal}
+        loading="lazy"
       />
       <div className="px-2 py-4 space-y-3 font-inter">
         <h2 className="text-amber-600 text-3xl font-semibold font-inter">

@@ -33,6 +33,7 @@ export function MealDetail() {
             src={foodProps.strMealThumb}
             alt={foodProps.strMeal}
             className="w-full md:h-[24rem] object-cover"
+            loading="lazy"
           />
           <Info
             strCategory={foodProps.strCategory!}
