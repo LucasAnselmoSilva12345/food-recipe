@@ -2,7 +2,6 @@ import { PartialMealsAPIProps } from '../../types/MealsAPIProps';
 import { useNavigate } from 'react-router-dom';
 import { ClickableButton } from '../ClickableButton';
 import { ReadMoreButton } from '../ReadMoreButton';
-import { Warning } from '../Warning';
 
 export function Card(props: PartialMealsAPIProps) {
   const navigate = useNavigate();
@@ -26,13 +25,7 @@ export function Card(props: PartialMealsAPIProps) {
         <h2 className="text-amber-600 text-3xl font-semibold font-inter">
           {props.strMeal}
         </h2>
-        <ReadMoreButton
-          text={
-            props.strInstructions ||
-            'Erro ao carregar as instruções de construção desse prato'
-          }
-          maxLength={300}
-        />
+        <ReadMoreButton text={props.strInstructions || ''} maxLength={300} />
         {props.strYoutube ? (
           <ClickableButton
             key={props.idMeal}
@@ -41,7 +34,7 @@ export function Card(props: PartialMealsAPIProps) {
             className="bg-orange-500"
           />
         ) : (
-          <Warning message="Essa receita não possui video de demonstração." />
+          <></>
         )}
       </div>
     </div>
