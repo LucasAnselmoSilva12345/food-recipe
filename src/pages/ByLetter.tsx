@@ -28,24 +28,27 @@ export function ByLetter() {
 
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-  const handleLetterClick = (letter: string) => {
-    setSelectedLetter(letter);
+  const handleLetterClick = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedLetter(event.target.value);
   };
 
   return (
     <section className="w-full px-6 py-4 md:w-3/5 md:my-0 md:mx-auto">
       <Title title="Pesquise a receita por letra" />
 
-      <div className="mt-3 py-3 md:text-center">
-        {alphabet.map((letter) => (
-          <button
-            key={letter}
-            className="mx-1 px-6 md:px-1 font-inter font-medium text-orange-950 transition-all duration-150 focus:outline-2 focus:outline-orange-700 hover:text-orange-700"
-            onClick={() => handleLetterClick(letter)}
-          >
-            {letter}
-          </button>
-        ))}
+      <div className="py-3 text-right">
+        <select
+          onChange={handleLetterClick}
+          value={selectedLetter || ''}
+          className="mx-1 px-2 md:px-1 font-inter font-medium text-orange-600 transition-all duration-150 focus:outline-2 focus:outline-orange-700 hover:text-orange-700"
+        >
+          <option value="">Selecione uma letra</option>
+          {alphabet.map((letter) => (
+            <option key={letter} value={letter}>
+              {letter}
+            </option>
+          ))}
+        </select>
       </div>
 
       {loading && <p>Carregando</p>}
