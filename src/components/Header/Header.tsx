@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavBar } from './NavBar';
 
+import foodRecipeLogo from '../../assets/food-recipe-logo.png';
+
 export function Header() {
   const [openMenuMobile, setOpenMenuMobile] = useState<boolean>(false);
 
@@ -19,7 +21,11 @@ export function Header() {
               className="text-orange-500 font-inter font-bold text-lg"
               to="/"
             >
-              Food-Recipe
+              <img
+                className="h-12 w-full"
+                src={foodRecipeLogo}
+                alt="Food-Recipe logo"
+              />
             </Link>
           </div>
 
